@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Félicitations pour ta Laurea</title>
+  <style>
+    :root {
+      --bg1: #fff6fb;
+      --bg2: #eef7ff;
+      --accent: #9b5cff;
+      --accent2: #ff7ab6;
+      --text: #252238;
+      --soft: rgba(255, 255, 255, 0.75);
+      --shadow: 0 24px 80px rgba(60, 46, 98, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(255, 122, 182, 0.28), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(155, 92, 255, 0.25), transparent 38%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow-x: hidden;
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+      animation: float 7s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: .5; }
+      50% { transform: translateY(-35px) scale(1.5); opacity: 1; }
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      width: min(980px, 100%);
+      background: var(--soft);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(18px);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: clamp(32px, 7vw, 76px);
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(155, 92, 255, 0.12);
+      color: #6437bd;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 8vw, 6.2rem);
+      line-height: 0.95;
+      margin: 0;
+      letter-spacing: -0.06em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 28px auto 0;
+      color: #4a445d;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    button, .link-button {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    button:hover, .link-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(155, 92, 255, 0.22);
+    }
+
+    .primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: #6437bd;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 28px 20px 80px;
+    }
+
+    section {
+      width: min(1050px, 100%);
+      margin: 0 auto 28px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(60, 46, 98, 0.1);
+      padding: clamp(24px, 5vw, 46px);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: #4a445d;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      min-height: 180px;
+      box-shadow: 0 14px 34px rgba(60, 46, 98, 0.09);
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .letter {
+      font-size: 1.15rem;
+      line-height: 1.95;
+      background: linear-gradient(135deg, rgba(155, 92, 255, 0.08), rgba(255, 122, 182, 0.1));
+      border-radius: 24px;
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .quote {
+      text-align: center;
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      line-height: 1.55;
+      color: #352b55;
+      font-weight: 800;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 50px;
+      color: #655d78;
+    }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      opacity: 0.9;
+      z-index: 999;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(105vh) rotate(720deg);
+        opacity: 0.7;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero { border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkle" style="left:8%; top:16%; animation-delay:0s"></div>
+  <div class="sparkle" style="left:78%; top:14%; animation-delay:1s"></div>
+  <div class="sparkle" style="left:88%; top:62%; animation-delay:2s"></div>
+  <div class="sparkle" style="left:18%; top:76%; animation-delay:3s"></div>
+
+  <header>
+    <div class="hero">
+      <div class="badge">🎓 Une réussite magnifique</div>
+      <h1>Félicitations<br><span class="gradient-text">pour ta Laurea</span></h1>
+      <p class="subtitle">
+        Aujourd’hui, on célèbre bien plus qu’un diplôme : on célèbre ton courage,
+        ta persévérance, ta force et tout le chemin que tu as parcouru pour arriver jusque-là.
+      </p>
+      <div class="buttons">
+        <button class="primary" onclick="launchConfetti()">Célébrer ce moment ✨</button>
+        <a class="link-button secondary" href="#message">Lire le message</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Tu peux être fière de toi</h2>
+      <p>
+        Le parcours n’a pas toujours été simple, mais tu as continué à avancer avec dignité,
+        patience et détermination. Cette réussite est la preuve que les efforts silencieux,
+        les sacrifices et la constance finissent toujours par parler plus fort que les difficultés.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">💪</div>
+          <h3>Ta force</h3>
+          <p>Tu as montré qu’on peut rester debout, même quand le chemin demande beaucoup.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌟</div>
+          <h3>Ton courage</h3>
+          <p>Tu as poursuivi ton objectif avec sérieux, malgré les moments moins faciles.</p>
+        </div>
+        <div class="card">
+          <div class="icon">❤️</div>
+          <h3>Ton exemple</h3>
+          <p>Tu inspires par ta façon d’aimer, de travailler, de croire et de continuer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="message">
+      <h2>Un message pour toi</h2>
+      <div class="letter">
+        Ma chère Linda,<br><br>
+        Je voulais prendre un moment pour te dire à quel point je suis heureux de te voir atteindre cette belle étape.
+        Ta laurea n’est pas seulement un diplôme : c’est le symbole de ta persévérance, de ton intelligence et de ta force intérieure.<br><br>
+        Je sais que ton parcours n’a pas toujours été facile, mais tu as continué à avancer avec courage. Tu as porté beaucoup de responsabilités,
+        tu as gardé la tête haute, et tu as prouvé que rien ne peut arrêter une personne déterminée à construire son avenir.<br><br>
+        Ce que j’admire le plus chez toi, ce n’est pas seulement ta réussite académique, mais la femme forte, douce et courageuse que tu es au quotidien.
+        Tu es un exemple magnifique de détermination et d’amour.<br><br>
+        Aujourd’hui, je te souhaite de savourer pleinement cette victoire. Tu l’as méritée. Que cette réussite soit le début de nouvelles portes,
+        de nouvelles joies et de tout ce que ton cœur désire.<br><br>
+        Félicitations encore, dottorezza. Je suis profondément admiratif de ton parcours. 🎓✨
+      </div>
+    </section>
+
+    <section>
+      <p class="quote">
+        “Ce diplôme raconte ton courage, ton travail et ta lumière. Continue de briller.”
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Fait avec beaucoup d’admiration et de respect 💜
+  </footer>
+
+  <script>
+    function launchConfetti() {
+      const colors = ["#9b5cff", "#ff7ab6", "#ffd166", "#06d6a0", "#4cc9f0"];
+      for (let i = 0; i < 140; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = 2.5 + Math.random() * 3 + "s";
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 6000);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(launchConfetti, 600);
+    });
+  </script>
+</body>
+</html>
